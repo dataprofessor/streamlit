@@ -1177,3 +1177,9 @@ This AGENTS.md is built from real-world experience:
 - **Years of Streamlit Development** — Patterns refined from building dozens of Streamlit applications over 2024-2025, including data dashboards, cheminformatics tools, ML apps, and enterprise applications deployed to Streamlit in Snowflake.
 
 Every pattern in this file has been validated in production.
+
+---
+
+**Last Updated:** January 2026
+**Format:** [AGENTS.md Standard](https://agents.md)
+
