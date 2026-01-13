@@ -192,7 +192,7 @@ Found a pattern that should be included? Open an issue or PR!
 
 - [AGENTS.md Standard](https://agents.md)
 - [Streamlit Documentation](https://docs.streamlit.io)
-- [Snowflake Cortex AI](https://docs.snowflake.com/en/user-guide/snowflake-cortex)
+- [Snowflake Cortex AI](https://docs.snowflake.com/en/user-guide/snowflake-cortex/aisql)
 - [Streamlit in Snowflake](https://docs.snowflake.com/en/developer-guide/streamlit/about-streamlit)
 
 ---
