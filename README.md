@@ -194,6 +194,8 @@ Found a pattern that should be included? Open an issue or PR!
 - [Streamlit Documentation](https://docs.streamlit.io)
 - [Snowflake Cortex AI](https://docs.snowflake.com/en/user-guide/snowflake-cortex/aisql)
 - [Streamlit in Snowflake](https://docs.snowflake.com/en/developer-guide/streamlit/about-streamlit)
+
+App patterns were borrowed from the #30DaysOfAI challenge
 - [30 Days of AI - App](https://30daysofai.streamlit.app/)
 - [30 Days of AI - GitHub](https://github.com/streamlit/30daysofai)
 ---
