@@ -424,13 +424,31 @@ if st.button("Generate"):
 ```
 
 ```python
-# Method 2: Custom generator (for APIs that don't return generators)
-# Useful for OpenAI, Anthropic, or when you need more control
+# Method 2: Simulated streaming with ai_complete (Snowflake Cortex)
+# Use when LLM doesn't natively support streaming - splits response into words
 import time
 
-def stream_llm_response(prompt: str):
-    """Generator that yields response chunks."""
-    # For OpenAI
+def stream_generator(prompt: str):
+    """Generate streaming effect from non-streaming LLM response."""
+    response_text = call_cortex_llm(prompt)  # Get full response first
+    for word in response_text.split(" "):
+        yield word + " "
+        time.sleep(0.02)  # Small delay for smooth streaming effect
+
+# In chat interface
+with st.chat_message("assistant"):
+    with st.spinner("Processing"):
+        response = st.write_stream(stream_generator(full_prompt))
+
+st.session_state.messages.append({"role": "assistant", "content": response})
+```
+
+```python
+# Method 3: OpenAI native streaming
+import time
+
+def stream_openai_response(prompt: str):
+    """Generator that yields response chunks from OpenAI."""
     client = get_openai_client()
     stream = client.chat.completions.create(
         model="gpt-4",
@@ -444,11 +462,11 @@ def stream_llm_response(prompt: str):
 
 if st.button("Generate"):
     with st.spinner("Generating..."):
-        st.write_stream(stream_llm_response(user_prompt))
+        st.write_stream(stream_openai_response(user_prompt))
 ```
 
 ```python
-# Method 3: Streaming in chat interface
+# Method 4: Full chat interface with streaming
 if prompt := st.chat_input("Your message"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
@@ -456,7 +474,7 @@ if prompt := st.chat_input("Your message"):
     
     with st.chat_message("assistant"):
         # Stream the response and capture it
-        response = st.write_stream(stream_llm_response(prompt))
+        response = st.write_stream(stream_generator(prompt))
     
     # st.write_stream returns the complete text when done
     st.session_state.messages.append({"role": "assistant", "content": response})
@@ -465,8 +483,9 @@ if prompt := st.chat_input("Your message"):
 **Streaming Tips:**
 - `st.write_stream()` accepts any generator/iterator that yields strings
 - The function returns the complete concatenated response when streaming finishes
-- Add small delays (`time.sleep(0.01)`) in custom generators for smoother display
-- Use `stream=True` parameter when available (Cortex, OpenAI, Anthropic APIs)
+- For `ai_complete` (which doesn't natively stream), use Method 2: get full response, then yield word-by-word
+- Add small delays (`time.sleep(0.02)`) in custom generators for smoother display
+- Use `stream=True` parameter when available (OpenAI, Anthropic APIs)
 
 ### Status and Progress Feedback
 
