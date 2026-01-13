@@ -1,6 +1,6 @@
 # Streamlit AGENTS.md
 
-> **Building a Streamlit app couldn't be easier. Vibe code your next app with the help of this AGENTS.md file.**
+> Building a Streamlit app couldn't be easier. Vibe code your next app with the help of this AGENTS.md file.
 
 A comprehensive [AGENTS.md](https://agents.md) file that guides AI coding assistants (Cursor, Copilot, Claude, etc.) to build production-ready Streamlit applications. Answer a few questions, get a complete app. It's that simple.
 
