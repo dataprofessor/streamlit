@@ -127,7 +127,7 @@ if prompt := st.chat_input("Message"):
 
 This AGENTS.md is built from real-world experience:
 
-- **30 Days of AI Challenge** — A 30-day series teaching AI app development with Streamlit and Snowflake Cortex
+- **[30 Days of AI](https://30daysofai.streamlit.app/)** — A 30-day series teaching AI app development with Streamlit and Snowflake Cortex ([GitHub](https://github.com/streamlit/30daysofai))
 - **Years of Streamlit Development** — Patterns from dozens of production apps built 2024-2025
 
 Every pattern has been validated in production.
@@ -194,7 +194,8 @@ Found a pattern that should be included? Open an issue or PR!
 - [Streamlit Documentation](https://docs.streamlit.io)
 - [Snowflake Cortex AI](https://docs.snowflake.com/en/user-guide/snowflake-cortex/aisql)
 - [Streamlit in Snowflake](https://docs.snowflake.com/en/developer-guide/streamlit/about-streamlit)
-
+- [30 Days of AI - App](https://30daysofai.streamlit.app/)
+- [30 Days of AI - GitHub](https://github.com/streamlit/30daysofai)
 ---
 
 **Built with ❤️ for the Streamlit community**
